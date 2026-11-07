@@ -1,0 +1,33 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import site from '../data/site.json';
+import { t, pagePath, withBase, type Lang } from '../lib/i18n';
+const { lang } = Astro.props as { lang: Lang };
+const d = t(lang);
+const g = d.guide;
+---
+<Base lang={lang} page="guide" title={d.seo.guide.title} description={d.seo.guide.description}>
+  <PageHead title={g.title} lead={g.lead} />
+  <section class="section">
+    <div class="wrap guide-grid">
+      <img src={withBase('images/hitsumabushi.jpg')} alt={g.title} width="1200" height="900" loading="eager" />
+      <div>
+        <ol class="steps">{g.steps.map((s: any, i: number) => <li><span class="num">{i + 1}</span><div><h2>{s.title}</h2><p>{s.body}</p></div></li>)}</ol>
+        <p class="tip">{g.tip}</p>
+      </div>
+    </div>
+  </section>
+  <section class="section tint">
+    <div class="wrap two-col">
+      <div class="note-card"><h2>{g.kansaiTitle}</h2><p>{g.kansaiBody}</p></div>
+      <div class="note-card"><h2>{g.unadonTitle}</h2><p>{g.unadonBody}</p><p><a href={pagePath(lang, 'menu') + '#unadon'}>{d.ui.viewMenu}</a></p></div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="wrap reserve-band">
+      <div><h2>{d.home.reserveTitle}</h2><p>{d.home.reserveBody}</p></div>
+      <a class="btn btn-primary btn-lg" href={`tel:${site.phoneIntl}`}>{d.ui.reserve}　{lang === 'ja' ? site.phone : site.phoneIntlDisplay}</a>
+    </div>
+  </section>
+</Base>

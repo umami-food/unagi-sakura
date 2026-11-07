@@ -1,0 +1,131 @@
+---
+import Base from '../layouts/Base.astro';
+import InfoList from '../components/InfoList.astro';
+import MapLinks from '../components/MapLinks.astro';
+import InstagramIcon from '../components/InstagramIcon.astro';
+import site from '../data/site.json';
+import menu from '../data/menu.json';
+import { t, pagePath, withBase, pick, yen, type Lang } from '../lib/i18n';
+const { lang } = Astro.props as { lang: Lang };
+const d = t(lang);
+const h = d.home;
+const titleLines = h.heroTitle.split('\n').map((line) => line.split(/[{}]/));
+const minPrice = (item: any) => Math.min(...item.sizes.map((s: any) => s.price));
+const url = new URL(pagePath(lang, 'home'), Astro.site).href;
+const jsonLd = {
+  '@context': 'https://schema.org', '@type': 'Restaurant',
+  name: site.name.ja, alternateName: 'Sumibi Unagi Sakura', url, telephone: site.phoneIntl,
+  image: new URL(withBase('images/og.jpg'), Astro.site).href,
+  servesCuisine: ['Japanese', 'Unagi'], priceRange: '¥1,780〜¥4,780', acceptsReservations: true,
+  menu: new URL(pagePath(lang, 'menu'), Astro.site).href,
+  address: { '@type': 'PostalAddress', streetAddress: '名駅4-14-10 柳橋フードマーケット 4F', addressLocality: '名古屋市中村区', addressRegion: '愛知県', postalCode: '450-0002', addressCountry: 'JP' },
+  geo: { '@type': 'GeoCoordinates', latitude: site.geo.lat, longitude: site.geo.lng },
+  openingHoursSpecification: [{ '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'], opens: '11:00', closes: '14:30' }],
+  sameAs: [site.instagram, site.tabelog],
+};
+---
+<Base lang={lang} page="home" title={d.seo.home.title} description={d.seo.home.description} jsonLd={jsonLd}>
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">{h.heroEyebrow}</p>
+        <h1 id="hero-title">{titleLines.map((parts) => <span class="line">{parts.map((p, i) => (i % 2 ? <span class="shu">{p}</span> : p))}</span>)}</h1>
+        <p class="hero-lead">{h.heroLead.split('\n').map((l) => <span class="line">{l}</span>)}</p>
+        <p class="open-badge">{h.openBadge}</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href={`tel:${site.phoneIntl}`}>{d.ui.reserve}　{lang === 'ja' ? site.phone : site.phoneIntlDisplay}</a>
+          <a class="btn btn-ghost" href={pagePath(lang, 'menu')}>{d.ui.viewMenu}</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img src={withBase('images/unadon.jpg')} alt={h.photoAlt} width="952" height="550" fetchpriority="high" />
+        <span class="hero-branch" aria-hidden="true"></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section intro" aria-labelledby="intro-title">
+    <div class="wrap intro-grid">
+      <img src={withBase('images/charcoal.jpg')} alt="" width="1200" height="900" loading="lazy" decoding="async" />
+      <div>
+        <h2 id="intro-title">{h.introTitle}</h2>
+        <p>{h.introBody}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section tint" aria-labelledby="menu-title">
+    <div class="wrap">
+      <div class="section-head"><h2 id="menu-title">{h.menuTitle}</h2><p>{h.menuLead}</p></div>
+      <div class="dish-grid">
+        {menu.items.map((item: any) => (
+          <a class="dish-card" href={pagePath(lang, 'menu') + '#' + item.id}>
+            <img src={withBase('images/' + item.image)} alt={pick(item.name, lang)} width="1200" height="900" loading="lazy" decoding="async" />
+            <div class="dish-body">
+              <h3>{pick(item.name, lang)}</h3>
+              <p>{pick(item.desc, lang)}</p>
+              <p class="dish-price">{yen(minPrice(item))}<span>{d.ui.fromSuffix}（{d.ui.taxIncl}）</span></p>
+            </div>
+          </a>
+        ))}
+      </div>
+      <p class="center"><a class="btn btn-ghost" href={pagePath(lang, 'menu')}>{d.ui.viewMenu}</a></p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="hitsu-title">
+    <div class="wrap hitsu-band">
+      <div>
+        <h2 id="hitsu-title">{h.hitsuTitle}</h2>
+        <p>{h.hitsuBody}</p>
+      </div>
+      <ol class="three-ways">{d.guide.steps.map((s: any, i: number) => <li><span class="num">{i + 1}</span>{s.title}</li>)}</ol>
+      <a class="btn btn-ghost" href={pagePath(lang, 'guide')}>{d.ui.viewGuide}</a>
+    </div>
+  </section>
+
+  <section class="section tint" aria-labelledby="reserve-title">
+    <div class="wrap reserve-band">
+      <div>
+        <h2 id="reserve-title">{h.reserveTitle}</h2>
+        <p>{h.reserveBody}</p>
+      </div>
+      <a class="btn btn-primary btn-lg" href={`tel:${site.phoneIntl}`}>{d.ui.reserve}　{lang === 'ja' ? site.phone : site.phoneIntlDisplay}</a>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="info-title">
+    <div class="wrap info-grid">
+      <div>
+        <h2 id="info-title">{h.infoTitle}</h2>
+        <InfoList lang={lang} />
+      </div>
+      <div><MapLinks lang={lang} /></div>
+    </div>
+  </section>
+
+  <section class="section dinner" aria-labelledby="dinner-title">
+    <div class="wrap dinner-band">
+      <div>
+        <p class="eyebrow" lang="ja">和牛すき焼きしゃぶしゃぶSakura 名古屋店</p>
+        <h2 id="dinner-title">{h.dinnerTitle}</h2>
+        <p>{h.dinnerBody}</p>
+      </div>
+      <a class="btn btn-light" href={site.dinnerSite} target="_blank" rel="noopener">{h.dinnerCta}</a>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="sns-title">
+    <div class="wrap sns-band">
+      <div>
+        <p class="eyebrow">Instagram {site.instagramHandle}</p>
+        <h2 id="sns-title">{h.snsTitle}</h2>
+        <p>{h.snsBody}</p>
+      </div>
+      <div class="btn-row">
+        <a class="btn btn-primary" href={site.instagram} target="_blank" rel="noopener"><InstagramIcon /> {h.snsCta}</a>
+        <a class="btn btn-ghost" href={site.tabelog} target="_blank" rel="noopener">{h.tabelogCta}</a>
+      </div>
+    </div>
+  </section>
+</Base>

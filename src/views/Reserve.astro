@@ -1,0 +1,22 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import InfoList from '../components/InfoList.astro';
+import site from '../data/site.json';
+import { t, type Lang } from '../lib/i18n';
+const { lang } = Astro.props as { lang: Lang };
+const d = t(lang);
+---
+<Base lang={lang} page="reserve" title={d.seo.reserve.title} description={d.seo.reserve.description}>
+  <PageHead title={d.reserve.title} lead={d.reserve.lead} />
+  <section class="section">
+    <div class="wrap narrow">
+      <div class="tel-card">
+        <p class="eyebrow">{d.reserve.telTitle}</p>
+        <a class="tel-big" href={`tel:${site.phoneIntl}`}>{lang === 'ja' ? site.phone : site.phoneIntlDisplay}</a>
+        <a class="btn btn-primary btn-lg" href={`tel:${site.phoneIntl}`}>{d.ui.reserve}</a>
+      </div>
+      <InfoList lang={lang} />
+    </div>
+  </section>
+</Base>

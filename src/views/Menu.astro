@@ -1,0 +1,23 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import MenuItem from '../components/MenuItem.astro';
+import menu from '../data/menu.json';
+import { t, pick, yen, pagePath, type Lang } from '../lib/i18n';
+const { lang } = Astro.props as { lang: Lang };
+const d = t(lang);
+---
+<Base lang={lang} page="menu" title={d.seo.menu.title} description={d.seo.menu.description}>
+  <PageHead title={d.menu.title} lead={d.menu.lead} />
+  <section class="section">
+    <div class="wrap">
+      <div class="menu-list">{menu.items.map((item: any) => <MenuItem lang={lang} item={item} />)}</div>
+      <div class="drinks">
+        <h2>{d.menu.drinksTitle}</h2>
+        <ul>{menu.drinks.map((dr: any) => <li><span>{pick(dr.name, lang)}</span><span>{yen(dr.price)}</span></li>)}</ul>
+      </div>
+      <p class="muted note">{d.menu.taxNote}　{d.menu.menuLangs}</p>
+      <p class="center"><a class="btn btn-ghost" href={pagePath(lang, 'guide')}>{d.ui.viewGuide}</a></p>
+    </div>
+  </section>
+</Base>
