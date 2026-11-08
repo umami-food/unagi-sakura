@@ -11,3 +11,4 @@
 - 写真：public/images/（同じファイル名で差し替え）
   - og.jpg（SNS用）
   - hero.jpg（トップ）、unadon.jpg／unadon-card.jpg（うな丼）、hitsumabushi.jpg／hitsumabushi-set.jpg（ひつまぶし）、step1〜3.jpg（食べ方）、charcoal.jpg・grill.mp4（炭火焼き）、shop-*.jpg・room-*.jpg（店舗・個室）、route.mp4（駅からの道のり動画）
+- ロゴ：public/images/logo-hex.*（六角・透過）、logo-hex-white.*（暗い背景用の白抜き）、logo-round.*（丸）、favicon.png・apple-touch-icon.png・icon-512.png（アイコン）

@@ -1,7 +1,7 @@
 ---
 import site from '../data/site.json';
 import InstagramIcon from './InstagramIcon.astro';
-import { LANGS, t, pagePath, type Lang, type PageKey } from '../lib/i18n';
+import { LANGS, t, pagePath, withBase, type Lang, type PageKey } from '../lib/i18n';
 interface Props { lang: Lang }
 const { lang } = Astro.props;
 const d = t(lang);
@@ -11,7 +11,7 @@ const year = new Date().getFullYear();
 <footer class="site-footer">
   <div class="wrap footer-grid">
     <div>
-      <p class="footer-logo" lang="ja"><span class="logo-seal" aria-hidden="true">鰻</span> 炭火うなぎSakura</p>
+      <p class="footer-logo" lang="ja"><img src={withBase('images/logo-hex-white.webp')} alt="炭火うなぎSakura" width="600" height="611" loading="lazy" /></p>
       <p lang="ja">{site.address.ja}</p>
       <p><a href={`tel:${site.phoneIntl}`}>{lang === 'ja' ? site.phone : site.phoneIntlDisplay}</a></p>
       <p>{d.ui.hours} {site.hours}（{d.ui.lastEntry} {site.lastEntry}）／{d.ui.closed}：{site.closed[lang]}</p>

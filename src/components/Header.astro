@@ -1,7 +1,7 @@
 ---
 import site from '../data/site.json';
 import InstagramIcon from './InstagramIcon.astro';
-import { LANGS, t, pagePath, type Lang, type PageKey } from '../lib/i18n';
+import { LANGS, t, pagePath, withBase, type Lang, type PageKey } from '../lib/i18n';
 interface Props { lang: Lang; page: PageKey | null }
 const { lang, page } = Astro.props;
 const d = t(lang);
@@ -10,7 +10,7 @@ const navPages: PageKey[] = ['home', 'menu', 'guide', 'access', 'faq', 'reserve'
 <header class="site-header">
   <div class="wrap header-inner">
     <a class="logo" href={pagePath(lang, 'home')} aria-label={site.name.ja}>
-      <span class="logo-seal" lang="ja" aria-hidden="true">鰻</span>
+      <img class="logo-mark" src={withBase('images/logo-hex.webp')} alt="" width="600" height="611" />
       <span class="logo-text" lang="ja">
         <span class="logo-jp">炭火うなぎ</span>
         <span class="logo-en">Sakura</span>
