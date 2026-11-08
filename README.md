@@ -10,4 +10,4 @@
 - デザイン：src/styles/global.css（先頭の :root で色を変更）
 - 写真：public/images/（同じファイル名で差し替え）
   - og.jpg（SNS用）
-  - hero.jpg（トップ）、unadon.jpg／unadon-lift.jpg（うな丼）、hitsumabushi.jpg／hitsumabushi-set.jpg（ひつまぶし）、step1〜3.jpg（食べ方）、charcoal.jpg・grill.mp4（炭火焼き）、shop-*.jpg・room-*.jpg（店舗・個室）、route.mp4（駅からの道のり動画）
+  - hero.jpg（トップ）、unadon.jpg／unadon-card.jpg（うな丼）、hitsumabushi.jpg／hitsumabushi-set.jpg（ひつまぶし）、step1〜3.jpg（食べ方）、charcoal.jpg・grill.mp4（炭火焼き）、shop-*.jpg・room-*.jpg（店舗・個室）、route.mp4（駅からの道のり動画）
