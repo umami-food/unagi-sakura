@@ -88,7 +88,7 @@ const jsonLd = {
     <div class="wrap">
       <div class="section-head"><h2 id="gallery-title">{h.galleryTitle}</h2><p>{h.galleryLead}</p></div>
       <div class="gallery">
-        {['shop-entrance.jpg', 'shop-interior.jpg', 'room-1.jpg', 'room-2.jpg'].map((src, i) => (
+        {['shop-entrance.jpg', 'shop-interior.jpg', 'room-1.jpg'].map((src, i) => (
           <figure><img src={withBase('images/' + src)} alt={h.gallery[i]} width="900" height="1200" loading="lazy" decoding="async" /><figcaption>{h.gallery[i]}</figcaption></figure>
         ))}
       </div>
