@@ -59,7 +59,16 @@
     "snsBody": "發布店舖消息與剛烤好的鰻魚。",
     "snsCta": "查看Instagram",
     "tabelogCta": "在Tabelog查看",
-    "photoAlt": "炭火烤製的鰻魚蓋飯"
+    "photoAlt": "炭火烤製的鰻魚蓋飯",
+    "galleryTitle": "店內",
+    "galleryLead": "穿過櫻花點綴的入口，在安靜的餐桌座位及包廂慢慢享用午餐。",
+    "gallery": [
+      "櫻花點綴的入口",
+      "餐桌座位",
+      "包廂（少人數）",
+      "包廂"
+    ],
+    "videoAlt": "由白燒、刷醬到炭火烤製完成"
   },
   "menu": {
     "title": "菜單",
@@ -90,7 +99,9 @@
     "kansaiTitle": "甚麼是關西風鰻魚",
     "kansaiBody": "關西風鰻魚的特色是不經蒸製、直接烤製，能充分品嚐炭火的香氣與鰻魚的鮮美。",
     "unadonTitle": "也推介鰻魚蓋飯",
-    "unadonBody": "香氣四溢的鰻魚配上醬汁白飯，附湯及白菜醃菜。"
+    "unadonBody": "香氣四溢的鰻魚配上醬汁白飯，附湯及白菜醃菜。",
+    "videoTitle": "影片：鰻魚飯的食法",
+    "videoNote": "將木桶分成四份 → 盛入小碗 → 加入佐料 → 淋上茶湯（約28秒，無聲音）。"
   },
   "access": {
     "title": "交通",
@@ -105,7 +116,14 @@
       "進入柳橋Food Market大廈，乘電梯到4樓。"
     ],
     "taxiTitle": "乘搭的士／計程車前來",
-    "taxiNote": "請將此地址出示給司機。"
+    "taxiNote": "請將此地址出示給司機。",
+    "photosTitle": "尋找本店",
+    "photos": [
+      "柳橋Food Market大廈",
+      "請以1樓的招牌為標記"
+    ],
+    "videoTitle": "由車站出發的路線（影片）",
+    "videoNote": "由名古屋站櫻通口一側到店舖入口的路線（約36秒，無聲音）。"
   },
   "reserve": {
     "title": "訂座",

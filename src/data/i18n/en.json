@@ -59,7 +59,16 @@
     "snsBody": "News and freshly grilled eel, straight from our kitchen.",
     "snsCta": "View on Instagram",
     "tabelogCta": "View on Tabelog",
-    "photoAlt": "Charcoal-grilled eel rice bowl"
+    "photoAlt": "Charcoal-grilled eel rice bowl",
+    "galleryTitle": "Inside",
+    "galleryLead": "Step through our cherry-blossom entrance to calm tables and private rooms, and take your time over lunch.",
+    "gallery": [
+      "Our cherry-blossom entrance",
+      "Table seating",
+      "Private room (small groups)",
+      "Private room"
+    ],
+    "videoAlt": "From plain grilling to sauce and charcoal finishing"
   },
   "menu": {
     "title": "Menu",
@@ -90,7 +99,9 @@
     "kansaiTitle": "What is Kansai-style eel?",
     "kansaiBody": "Kansai-style eel is grilled without steaming, so you can really taste the fragrance of the charcoal and the richness of the eel.",
     "unadonTitle": "Or try our unadon",
-    "unadonBody": "Fragrant eel over sauce-seasoned rice, simply served, with soup and pickled Chinese cabbage."
+    "unadonBody": "Fragrant eel over sauce-seasoned rice, simply served, with soup and pickled Chinese cabbage.",
+    "videoTitle": "Watch: how to eat hitsumabushi",
+    "videoNote": "Dividing the bowl into four, serving, adding condiments, then pouring tea broth (about 28 seconds, no sound)."
   },
   "access": {
     "title": "Access",
@@ -105,7 +116,14 @@
       "Enter the Yanagibashi Food Market building and take the elevator to the 4th floor."
     ],
     "taxiTitle": "Coming by taxi?",
-    "taxiNote": "Show this address to your driver."
+    "taxiNote": "Show this address to your driver.",
+    "photosTitle": "Landmarks",
+    "photos": [
+      "The Yanagibashi Food Market building",
+      "Look for our sign on the ground floor"
+    ],
+    "videoTitle": "Route from the station (video)",
+    "videoNote": "From the Sakura-dori side of Nagoya Station to our entrance (about 36 seconds, no sound)."
   },
   "reserve": {
     "title": "Reservations",

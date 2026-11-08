@@ -4,7 +4,7 @@ import PageHead from '../components/PageHead.astro';
 import InfoList from '../components/InfoList.astro';
 import MapLinks from '../components/MapLinks.astro';
 import TaxiCard from '../components/TaxiCard.astro';
-import { t, type Lang } from '../lib/i18n';
+import { t, withBase, type Lang } from '../lib/i18n';
 const { lang } = Astro.props as { lang: Lang };
 const d = t(lang);
 const a = d.access;
@@ -17,7 +17,15 @@ const a = d.access;
         <MapLinks lang={lang} />
         <p class="muted note">{a.floorNote}</p>
         <h2 class="sub">{a.directionsTitle}</h2>
+        <div class="landmarks">
+          {['shop-exterior.jpg', 'shop-sign.jpg'].map((src, i) => (
+            <figure><img src={withBase('images/' + src)} alt={a.photos[i]} width="900" height="1200" loading="lazy" decoding="async" /><figcaption>{a.photos[i]}</figcaption></figure>
+          ))}
+        </div>
         <ol class="steps small">{a.directions.map((s: string, i: number) => <li><span class="num">{i + 1}</span><div><p>{s}</p></div></li>)}</ol>
+        <h2 class="sub">{a.videoTitle}</h2>
+        <p class="muted note" style="margin-top:0">{a.videoNote}</p>
+        <video class="route-video" src={withBase('images/route.mp4')} poster={withBase('images/route-poster.jpg')} width="540" height="960" controls muted playsinline preload="none"></video>
       </div>
       <div>
         <InfoList lang={lang} />

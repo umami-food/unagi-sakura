@@ -11,9 +11,14 @@ const g = d.guide;
   <PageHead title={g.title} lead={g.lead} />
   <section class="section">
     <div class="wrap guide-grid">
-      <img src={withBase('images/hitsumabushi.jpg')} alt={g.title} width="1200" height="900" loading="eager" />
+      <div class="guide-media">
+        <img src={withBase('images/hitsumabushi.jpg')} alt={g.title} width="1200" height="900" loading="eager" />
+        <h2 class="sub">{g.videoTitle}</h2>
+        <p class="muted note" style="margin-top:0">{g.videoNote}</p>
+        <video class="howto-video" src={withBase('images/hitsumabushi-howto.mp4')} poster={withBase('images/hitsumabushi-howto-poster.jpg')} width="540" height="960" controls muted playsinline preload="none"></video>
+      </div>
       <div>
-        <ol class="steps">{g.steps.map((s: any, i: number) => <li><span class="num">{i + 1}</span><div><h2>{s.title}</h2><p>{s.body}</p></div></li>)}</ol>
+        <ol class="steps steps-photo">{g.steps.map((s: any, i: number) => <li><img src={withBase(`images/step${i + 1}.jpg`)} alt={s.title} width="900" height="900" loading="lazy" decoding="async" /><div><p class="step-no"><span class="num">{i + 1}</span></p><h2>{s.title}</h2><p>{s.body}</p></div></li>)}</ol>
         <p class="tip">{g.tip}</p>
       </div>
     </div>

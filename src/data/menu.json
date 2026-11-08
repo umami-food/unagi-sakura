@@ -99,7 +99,8 @@
           "add": 200
         }
       ],
-      "image": "unadon.jpg"
+      "image": "unadon.jpg",
+      "cardImage": "unadon-lift.jpg"
     },
     {
       "id": "hitsumabushi",
@@ -179,7 +180,8 @@
           "add": 100
         }
       ],
-      "image": "hitsumabushi.jpg"
+      "image": "hitsumabushi-set.jpg",
+      "cardImage": "hitsumabushi.jpg"
     }
   ],
   "drinks": [

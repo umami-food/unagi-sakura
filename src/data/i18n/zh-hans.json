@@ -59,7 +59,16 @@
     "snsBody": "发布店铺消息与刚烤好的鳗鱼。",
     "snsCta": "查看Instagram",
     "tabelogCta": "在Tabelog查看",
-    "photoAlt": "炭火烤制的鳗鱼盖饭"
+    "photoAlt": "炭火烤制的鳗鱼盖饭",
+    "galleryTitle": "店内",
+    "galleryLead": "穿过樱花点缀的入口，在安静的餐桌座位与包间慢慢享用午餐。",
+    "gallery": [
+      "樱花点缀的入口",
+      "餐桌座位",
+      "包间（少人数）",
+      "包间"
+    ],
+    "videoAlt": "从白烤、刷酱到炭火烤制完成"
   },
   "menu": {
     "title": "菜单",
@@ -90,7 +99,9 @@
     "kansaiTitle": "什么是关西风鳗鱼",
     "kansaiBody": "关西风鳗鱼的特点是不经蒸制、直接烤制，能充分品尝到炭火的香气与鳗鱼的鲜美。",
     "unadonTitle": "也推荐鳗鱼盖饭",
-    "unadonBody": "香气四溢的鳗鱼搭配酱汁米饭，附汤和白菜腌菜。"
+    "unadonBody": "香气四溢的鳗鱼搭配酱汁米饭，附汤和白菜腌菜。",
+    "videoTitle": "视频：鳗鱼饭的吃法",
+    "videoNote": "将木桶分成四份 → 盛入小碗 → 加入佐料 → 浇上茶汤（约28秒，无声音）。"
   },
   "access": {
     "title": "交通",
@@ -105,7 +116,14 @@
       "进入柳桥Food Market大楼，乘电梯到4楼。"
     ],
     "taxiTitle": "乘坐出租车前来",
-    "taxiNote": "请将此地址出示给司机。"
+    "taxiNote": "请将此地址出示给司机。",
+    "photosTitle": "寻找本店",
+    "photos": [
+      "柳桥Food Market大楼",
+      "请以1楼的招牌为标志"
+    ],
+    "videoTitle": "从车站出发的路线（视频）",
+    "videoNote": "从名古屋站樱通口一侧到店铺入口的路线（约36秒，无声音）。"
   },
   "reserve": {
     "title": "预约",

@@ -285,3 +285,23 @@ p, ul, ol, dl { margin: 0; }
 }
 .hero h1 { font-size: clamp(2.1rem, 1.3rem + 2.4vw, 3.4rem); }
 @media (min-width: 861px) { .hero h1:not(:lang(en)) .line { white-space: nowrap; } }
+
+/* 写真・動画 */
+.intro-video { width: 100%; max-width: 26rem; margin-inline: auto; height: auto; aspect-ratio: 4 / 5; display: block; object-fit: cover; border-radius: 16px; background: #2b1d15; }
+.gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(0.75rem, 2vw, 1.25rem); }
+.gallery img, .landmarks img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 12px; }
+.gallery figure, .landmarks figure { margin: 0; }
+.gallery figcaption, .landmarks figcaption { font-size: var(--step--1); color: var(--ink-soft); margin-top: 0.5rem; }
+@media (max-width: 860px) { .gallery { grid-template-columns: 1fr 1fr; } }
+.landmarks { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
+.steps-photo { gap: 1.5rem; }
+.steps-photo li { display: grid; grid-template-columns: 9rem 1fr; gap: 1.1rem; align-items: center; background: #fff; border-radius: 16px; padding: 0.75rem; }
+.steps-photo img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 12px; }
+.step-no { margin: 0 0 0.3rem !important; }
+.step-no .num { width: 1.8rem; height: 1.8rem; font-size: 0.95rem; }
+@media (max-width: 520px) { .steps-photo li { grid-template-columns: 6.5rem 1fr; } }
+
+.route-video { width: 100%; max-width: 22rem; height: auto; aspect-ratio: 9 / 16; border-radius: 14px; background: #2b1d15; margin-top: 0.75rem; display: block; }
+
+.guide-media .sub { margin-top: var(--space-l); }
+.howto-video { width: 100%; max-width: 20rem; height: auto; aspect-ratio: 9 / 16; border-radius: 14px; background: #2b1d15; margin-top: 0.75rem; display: block; }
